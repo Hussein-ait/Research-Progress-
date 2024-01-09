@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset ="utf-8">
+  <title>Postgraduate AI Based Research Progress Management System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #header {
+      background-color: lightblue;
+      padding: 10px;
+      color: darkblue;
+    }
+   h1 {
+   font-size: 16px;
+   }
+   h2 {
+   font-size: 16px;
+   }
+   h3 {
+   font-size: 12px;
+   }
+#menubar {
+            background-color: lavender;
+            display: flex;
+            align-items: center;
+            padding: 60px;
+            height:30px;
+        }
+
+        .menu-item {
+            margin-right: 30px;
+            color: darkblue;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            height:30px;
+        }
+
+#tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            transition: opacity 1s;
+        }
+
+        #help-console {
+            position: absolute;
+            background-color: lavender;
+            border: 1px solid darkblue;
+            padding: 10px;
+        }
+
+    #sidebar {
+      background: skyblue;
+      width: 40px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #content {
+      margin-left: 40px;
+      padding: 20px;
+    }
+
+    #tooltip {
+      position: absolute;
+      background-color: darkblue;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    #console {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+      width: 200px;
+      height: 1200px;
+      z-index: 1;
+    }
+
+    .button {
+      background-color: skyblue;
+      color: darkblue;
+      border: none;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      top: 1200px;
+      right: 800px;
+    }
+
+    .button:hover {
+      background-color: #87CEEB;
+    }
+
+    .button-small {
+      font-size: 10px;
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+      position: absolute;
+      top: 120px;
+      right: 10px;
+      background-color: skyblue;
+      border:none;
+    }
+
+    .textarea {
+      width: 880px;
+      height: 50px;
+      margin-bottom: 10px;
+      font-size:14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1 style="color: darkblue; text-align: center;">UNIVERSITY OF KUFA  جامعة الكوفة</h1>
+<h1 style="color: darkblue; text-align: center;"> College of Medicine   كلية الطب </h1>
+<h1 style="color: darkblue; text-align: center;">
+AI Based Management System for Postgraduate Research Progress </h1>
+<h3 style ="color: darkblue; text-align: center;">
+Dip/MSc/PhD PROGRESS REVIEW   استمارة متابعة التقدم المنجز لطلبة الدراسات العليا
+</h3>
+<h3 style ="color: darkblue; text-align: center;">To be completed by30th Jan, 30th May and 30th Sep</h3>
+
+    <h3 style="text-align: center;">Stage 1; 2023-2024</h3>
+  </div>
+
+    <div id="menubar">
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Home</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Edit</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">View</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Data</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Processing</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">AI Analysis</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Visualization</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">AI Robotics</div>
+        <div class="menu-item" onclick="showTooltip('Lite version of AIT', event)">Apps</div>
+        <div class="menu-item" onclick="showHelpConsole()">Help</div>
+    </div>
+  <div id="sidebar"></div>
+  <div id="content">
+<p> 
+SECTION 3: to be completed by the Supervisor 
+يجب أن تملى هذه الاستمارة من قبل المشرف </p>
+    <textarea class="textarea" placeholder="(a) Please comment on the accuracy of the student's assessment of his/her progress: 
+. پرجى كتابة تقرير حول دقة تقييم الطالب للتقدم الحاصل له 
+"></textarea>
+<p> Type of study </p>
+    <textarea class="textarea" placeholder="
+b)Please rate the student's progress in the last four months) 
+پرجى تقييم تقدم الطالب في الاشهر الاربعة الاخيرة. 
+Excellent (ممتاز)              Good (جيد)               Not Satisfactory (مرضي)               Satisfactory (غير مرضي)"></textarea>
+    <textarea class="textarea" placeholder="(c) If Not Satisfactory, state what steps the student should now take to ensure a satisfactory 
+outcome: 
+إذا التقييم "غير مرضية" ما الخطوات اللازمة التي يجب أن تتخذ من قبل الطالب لضمان نتيجة مرضية "></textarea>
+    <textarea class="textarea" placeholder="(d) Please state whether you feel the student has completed a satisfactory level of research project 
+and whether there are any gaps still to be filled: 
+يرجى بيان فيما إذا كان الطالب قد أكمل مستوى مرضي من المشروع البحثي و عما إذا كان هناك أي نواقص يجب اكمالها :"></textarea>
+    
+    <button class="button" onclick="showTooltip(this)">Button 1</button>
+    <button class="button" onclick="showTooltip(this)">Button 2</button>
+  </div>
+  <div id="tooltip">Lite version of AIT</div>
+  <div id="console">
+    <p>Readme: This application is totally designed and developed by AIT project and being dedicated and distributed for Kufa College of Medicine for 2023-2024</p>
+    <p>Tutorials: For more details about researcher guide please try the following link: https//www.googledata.com</p>
+  </div>
+  <button class="button-small">AIT &#169; distributed to Kufa College of Medicine 2023-2024</button>
+
+  <script>
+    function showTooltip(message, event) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerText = message;
+            tooltip.style.top = event.clientY + 'px';
+            tooltip.style.left = event.clientX + 'px';
+            tooltip.style.display = 'block';
+
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 1000);
+        }
+
+        function showHelpConsole() {
+            const helpConsole = document.getElementById('console');
+            helpConsole.style.display = 'block';
+        }
+
+        document.addEventListener('click', function(event) {
+            const helpConsole = document.getElementById('console');
+            if (!event.target.closest('#console') && event.target.className !== 'menu-item') {
+                helpConsole.style.display = 'none';
+            }
+        });
+  </script>
+</body>
+</html>
